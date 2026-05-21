@@ -7,11 +7,8 @@
       "RelativeMoniker": "D:0:0:{0744C109-B950-D0D2-8881-7EE895761866}|BlackJack.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0744C109-B950-D0D2-8881-7EE895761866}|BlackJack.csproj|h:\\c#\\uua9_blackjacks_clementvolcke\\creationpacket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0744C109-B950-D0D2-8881-7EE895761866}|BlackJack.csproj|solutionrelative:creationpacket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|H:\\C#\\AdditionMatrice_VolckeClement_5TTI\\MethodeDuProjet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0744C109-B950-D0D2-8881-7EE895761866}|BlackJack.csproj|h:\\c#\\uua9_blackjacks_clementvolcke\\packetcarte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0744C109-B950-D0D2-8881-7EE895761866}|BlackJack.csproj|solutionrelative:packetcarte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,37 +26,26 @@
               "Title": "Program.cs",
               "DocumentMoniker": "H:\\C#\\UUA9_BlackJacks_ClementVolcke\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "H:\\C#\\UUA9_BlackJacks_ClementVolcke\\Program.cs*",
-              "RelativeToolTip": "Program.cs*",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAgwDoAAAAlAAAAAAAAAA==",
+              "ToolTip": "H:\\C#\\UUA9_BlackJacks_ClementVolcke\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAALcAAAAAAAAAAAAAANIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-16T07:24:58.564Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MethodeDuProjet.cs",
-              "DocumentMoniker": "H:\\C#\\AdditionMatrice_VolckeClement_5TTI\\MethodeDuProjet.cs",
-              "RelativeDocumentMoniker": "..\\AdditionMatrice_VolckeClement_5TTI\\MethodeDuProjet.cs",
-              "ToolTip": "H:\\C#\\AdditionMatrice_VolckeClement_5TTI\\MethodeDuProjet.cs",
-              "RelativeToolTip": "..\\AdditionMatrice_VolckeClement_5TTI\\MethodeDuProjet.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-16T07:14:52.863Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CreationPacket.cs",
-              "DocumentMoniker": "H:\\C#\\UUA9_BlackJacks_ClementVolcke\\CreationPacket.cs",
-              "RelativeDocumentMoniker": "CreationPacket.cs",
-              "ToolTip": "H:\\C#\\UUA9_BlackJacks_ClementVolcke\\CreationPacket.cs",
-              "RelativeToolTip": "CreationPacket.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAANAAAAAAAAAA==",
+              "Title": "PacketCarte.cs",
+              "DocumentMoniker": "H:\\C#\\UUA9_BlackJacks_ClementVolcke\\PacketCarte.cs",
+              "RelativeDocumentMoniker": "PacketCarte.cs",
+              "ToolTip": "H:\\C#\\UUA9_BlackJacks_ClementVolcke\\PacketCarte.cs",
+              "RelativeToolTip": "PacketCarte.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-16T07:11:30.387Z",
+              "WhenOpened": "2026-04-23T07:31:16.138Z",
+              "IsPinned": true,
               "EditorCaption": ""
             }
           ]

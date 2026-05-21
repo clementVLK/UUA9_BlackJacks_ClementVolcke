@@ -20,12 +20,12 @@
             // Utilisation du caractère @ devant la chaîne pour permettre le texte multi-lignes (Verbatim)
             Console.ForegroundColor = ConsoleColor.DarkRed; // Le rouge pour rappeler la couleur des tapis de casino
             Console.WriteLine(@"
- ██████╗ ██╗      █████╗  ██████╗██╗  ██╗     ██╗ █████╗  ██████╗██╗  ██╗
- ██╔══██╗██║     ██╔══██╗██╔════╝██║ ██╔╝     ██║██╔══██╗██╔════╝██║ ██╔╝
- ██████╔╝██║     ███████║██║     █████╔╝      ██║███████║██║     █████╔╝ 
- ██╔══██╗██║     ██╔══██║██║     ██╔═██╗ ██   ██║██╔══██║██║     ██╔═██╗ 
- ██████╔╝███████╗██║  ██║╚██████╗██║  ██╗╚██████╔╝██║  ██║╚██████╗██║  ██╗
- ╚═════╝ ╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝");
+                 ██████╗ ██╗      █████╗  ██████╗██╗  ██╗     ██╗ █████╗  ██████╗██╗  ██╗
+                 ██╔══██╗██║     ██╔══██╗██╔════╝██║ ██╔╝     ██║██╔══██╗██╔════╝██║ ██╔╝
+                 ██████╔╝██║     ███████║██║     █████╔╝      ██║███████║██║     █████╔╝ 
+                 ██╔══██╗██║     ██╔══██║██║     ██╔═██╗ ██   ██║██╔══██║██║     ██╔═██╗ 
+                 ██████╔╝███████╗██║  ██║╚██████╗██║  ██╗╚██████╔╝██║  ██║╚██████╗██║  ██╗
+                 ╚═════╝ ╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝");
 
             Console.ResetColor(); // Réinitialise la couleur par défaut (blanc sur noir)
             Console.WriteLine("\n" + new string('═', 80)); // Trace une ligne de séparation de 80 caractères '═'
@@ -58,12 +58,149 @@
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("\n\t\t╔════════════════════════════════════════╗");
             Console.WriteLine("\t\t║        [!] LA PARTIE DÉBUTE [!]        ║");
-            Console.WriteLine("\t\t╚════════════════════════════════════════╝");    
+            Console.WriteLine("\t\t╚════════════════════════════════════════╝");
             Console.ResetColor();
             Thread.Sleep(1000); // Petite pause finale avant de passer à la suite
 
             // --- LOGIQUE SUIVANTE (DÉBUT DU NSD PRINCIPAL) ---
-           // C'est ici que tu insères ta boucle de mise (tant que Mise > MonnaiePoche) [cite: 2]
+            // C'est ici que tu insères ta boucle de mise (tant que Mise > MonnaiePoche) [cite: 2]
+            // --- TOUR DU JOUEUR ---
+            TourJoueur(ref handPlayer, ref packet, ref scorePlayer);
+
+            // --- TOUR DU CROUPIER (Uniquement si le joueur n'a pas explosé son score) ---
+            if (scorePlayer <= 21)
+            {
+                Console.Clear();
+                Console.WriteLine("\n--- VOS CARTES FINALES ---");
+                PacketCarte.AfficherCartesGraphiques(handPlayer, false);
+
+                Console.WriteLine("\n--- LE CROUPIER JOUE ---");
+                TourCroupier(ref handCroupier, ref packet, ref scoreCroupier, scorePlayer);
+            }
+
+            // --- DÉTERMINATION DU GAGNANT ET AJUSTEMENT DU SOLDE ---
+            Console.WriteLine("\n" + new string('═', 50));
+            if (scorePlayer > 21)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($" BUST ! Vous avez dépassé 21. Vous perdez votre mise de {mise} €.");
+                monnaiePoche -= mise;
+            }
+            else if (scoreCroupier > 21)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($" LE CROUPIER CRASH ({scoreCroupier}) ! Vous gagnez {mise} € !");
+                monnaiePoche += mise;
+            }
+            else if (scorePlayer > scoreCroupier)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($" VICTOIRE ! Votre score ({scorePlayer}) bat le Croupier ({scoreCroupier}). Vous gagnez {mise} € !");
+                monnaiePoche += mise;
+            }
+            else if (scorePlayer < scoreCroupier)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($" DÉFAITE ! Le Croupier ({scoreCroupier}) bat votre score ({scorePlayer}). Vous perdez {mise} €.");
+                monnaiePoche -= mise;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine($" ÉGALITÉ ({scorePlayer} partout) ! Vous récupérez votre mise.");
+            }
+            Console.ResetColor();
+            Console.WriteLine(new string('═', 50));
+
+            // Vérification de banqueroute
+            if (monnaiePoche <= 0)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("\n [!] Plus de crédits... Vous êtes ruiné. Le casino ferme ses portes !");
+                Console.ResetColor();
+                break;
+            }
+
+            // Demande pour continuer
+            Console.Write("\n Voulez-vous faire une autre donne ? (O/N) : ");
+            string rejouer = Console.ReadLine().ToUpper();
+            if (rejouer != "O")
+            {
+                Console.WriteLine($"\n Merci d'avoir joué ! Vous repartez avec un total de {monnaiePoche} € !");
+                break;
+            }
+        }
+
+        public static void TourJoueur(ref List<string> HandPlayer, ref List<string> Packet, ref int ScorePlayer)
+        {
+            bool joueurCouche = false;
+            string choixPlayer = ""; // Initialisation vide pour entrer dans la boucle
+
+            // CORRECTION : "ScorePlayer" avec une majuscule
+            while (ScorePlayer < 21 && choixPlayer != "S" && joueurCouche == false)
+            {
+                Console.WriteLine("Voulez-vous piocher (H) ou rester (S) ?");
+                choixPlayer = Console.ReadLine().ToUpper(); // Lire le choix et forcer en majuscule
+
+                if (choixPlayer == "H")
+                {
+                    HandPlayer.Add(Packet.Pop()); // ajout d'une carte à la main du joueur
+                    ScorePlayer = CalculScore(HandPlayer); // recalcule du score
+                }
+                // CORRECTION : On utilise "else if" au lieu de "else" pour intercepter le "S"
+                else if (choixPlayer == "S")
+                {
+                    joueurCouche = true;
+                    Console.WriteLine("Vous décidez de vous arrêter.");
+                }
+                else
+                {
+                    Console.WriteLine("Choix invalide. Veuillez taper H ou S.");
+                }
+            }
+        }
+
+        public static void TourCroupier(ref List<string> HandCroupier, ref List<string> Packet, ref int ScoreCroupier, int ScorePlayer)
+        {
+            // --- 1. Vérification si le joueur a dépassé 21 ---
+            if (ScorePlayer > 21)
+            {
+                Console.WriteLine("Perdu");
+                return; // Sort de la fonction si le joueur a déjà perdu
+            }
+
+            // --- 2. Initialisation du tour du croupier ---
+            ScoreCroupier = CalculScore(HandCroupier);
+            bool CroupierCouche = false;
+
+            // --- 3. Logique du Croupier (si le joueur n'a pas sauté) ---
+            if (ScorePlayer <= 21)
+            {
+                // On révèle la deuxième carte du croupier
+                Console.WriteLine($"La deuxième carte du croupier était : {HandCroupier[1]}");
+
+                // Règle classique : le croupier pioche tant qu'il est en dessous de 17
+                while (ScoreCroupier < 17)
+                {
+                    for (int i = 0; i < 3; i++) // Boucle simple pour afficher trois petits points
+                    {
+                        Thread.Sleep(1200); // Met le programme en pause pendant 600 millisecondes (1.6s)
+                        Console.Write("."); // Ajoute un point à chaque tour de boucle
+                    }
+                    Console.WriteLine(); // Retour à la ligne après les points
+
+                    HandCroupier.Add(Packet.Pop()); // On utilise le .Pop() créé précédemment
+                    ScoreCroupier = CalculScore(HandCroupier);
+                    Console.WriteLine($"Le croupier pioche. Nouveau score : {ScoreCroupier}");
+                }
+            } // CORRECTION : L'accolade fermante du "if (ScorePlayer <= 21)" est placée ici !
+            else // Branche 'F' du ScorePlayer <= 21
+            {
+                CroupierCouche = true;
+                Console.WriteLine("Croupier Bust !");
+            }
         }
     }
 }
+
+      
