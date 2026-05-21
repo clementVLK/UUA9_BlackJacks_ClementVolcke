@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "H:\\C#\\UUA9_BlackJacks_ClementVolcke\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0744C109-B950-D0D2-8881-7EE895761866}|BlackJack.csproj|h:\\c#\\uua9_blackjacks_clementvolcke\\packetcarte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0744C109-B950-D0D2-8881-7EE895761866}|BlackJack.csproj|solutionrelative:packetcarte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0744C109-B950-D0D2-8881-7EE895761866}|BlackJack.csproj|h:\\c#\\uua9_blackjacks_clementvolcke\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0744C109-B950-D0D2-8881-7EE895761866}|BlackJack.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0744C109-B950-D0D2-8881-7EE895761866}|BlackJack.csproj|h:\\c#\\uua9_blackjacks_clementvolcke\\packetcarte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0744C109-B950-D0D2-8881-7EE895761866}|BlackJack.csproj|solutionrelative:packetcarte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0744C109-B950-D0D2-8881-7EE895761866}|BlackJack.csproj|h:\\c#\\uua9_blackjacks_clementvolcke\\complement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0744C109-B950-D0D2-8881-7EE895761866}|BlackJack.csproj|solutionrelative:complement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,17 +22,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "H:\\C#\\UUA9_BlackJacks_ClementVolcke\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "H:\\C#\\UUA9_BlackJacks_ClementVolcke\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAALcAAAAAAAAAAAAAANIAAAAAAAAAAAAAAA==",
+              "ToolTip": "H:\\C#\\UUA9_BlackJacks_ClementVolcke\\Program.cs*",
+              "RelativeToolTip": "Program.cs*",
+              "ViewState": "AgIAALMAAAAAAAAAAAAqwMcAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-16T07:24:58.564Z",
               "IsPinned": true,
@@ -36,16 +40,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "Complement.cs",
+              "DocumentMoniker": "H:\\C#\\UUA9_BlackJacks_ClementVolcke\\Complement.cs",
+              "RelativeDocumentMoniker": "Complement.cs",
+              "ToolTip": "H:\\C#\\UUA9_BlackJacks_ClementVolcke\\Complement.cs",
+              "RelativeToolTip": "Complement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T06:52:12.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "PacketCarte.cs",
               "DocumentMoniker": "H:\\C#\\UUA9_BlackJacks_ClementVolcke\\PacketCarte.cs",
               "RelativeDocumentMoniker": "PacketCarte.cs",
               "ToolTip": "H:\\C#\\UUA9_BlackJacks_ClementVolcke\\PacketCarte.cs",
               "RelativeToolTip": "PacketCarte.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAgwC8AAABwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-23T07:31:16.138Z",
-              "IsPinned": true,
+              "WhenOpened": "2026-05-21T06:49:28.115Z",
               "EditorCaption": ""
             }
           ]
