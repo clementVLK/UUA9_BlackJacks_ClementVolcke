@@ -17,3 +17,13 @@ H:\C#\UUA9_BlackJacks_ClementVolcke\obj\Debug\net8.0\BlackJack.AssemblyInfoInput
 H:\C#\UUA9_BlackJacks_ClementVolcke\obj\Debug\net8.0\BlackJack.AssemblyInfo.cs
 H:\C#\UUA9_BlackJacks_ClementVolcke\obj\Debug\net8.0\BlackJack.csproj.CoreCompileInputs.cache
 H:\C#\UUA9_BlackJacks_ClementVolcke\obj\Debug\net8.0\BlackJack.sourcelink.json
+H:\C#\UUA9_BlackJacks_ClementVolcke\bin\Debug\net8.0\BlackJack.exe
+H:\C#\UUA9_BlackJacks_ClementVolcke\bin\Debug\net8.0\BlackJack.deps.json
+H:\C#\UUA9_BlackJacks_ClementVolcke\bin\Debug\net8.0\BlackJack.runtimeconfig.json
+H:\C#\UUA9_BlackJacks_ClementVolcke\bin\Debug\net8.0\BlackJack.dll
+H:\C#\UUA9_BlackJacks_ClementVolcke\bin\Debug\net8.0\BlackJack.pdb
+H:\C#\UUA9_BlackJacks_ClementVolcke\obj\Debug\net8.0\BlackJack.dll
+H:\C#\UUA9_BlackJacks_ClementVolcke\obj\Debug\net8.0\refint\BlackJack.dll
+H:\C#\UUA9_BlackJacks_ClementVolcke\obj\Debug\net8.0\BlackJack.pdb
+H:\C#\UUA9_BlackJacks_ClementVolcke\obj\Debug\net8.0\BlackJack.genruntimeconfig.cache
+H:\C#\UUA9_BlackJacks_ClementVolcke\obj\Debug\net8.0\ref\BlackJack.dll

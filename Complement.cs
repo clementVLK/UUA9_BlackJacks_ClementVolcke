@@ -49,5 +49,48 @@ namespace BlackJack
 
             return score;
         }
+        public static void AfficherRegles()
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\n═" + new string('═', 65) + "═");
+            Console.WriteLine("                       RÈGLES DU BLACKJACK                        ");
+            Console.WriteLine("═" + new string('═', 65) + "═");
+            Console.ResetColor();
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("\n [BUT DU JEU]");
+            Console.ResetColor();
+            Console.WriteLine("   Battre le croupier en obtenant un score le plus proche de 21.");
+            Console.WriteLine("   Attention : Si vous dépassez 21, vous perdez d'office (BUST).");
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("\n [VALEUR DES CARTES]");
+            Console.ResetColor();
+            Console.WriteLine("   • De 2 à 10 : Valeur indiquée sur la carte.");
+            Console.WriteLine("   • Valet (J), Dame (Q), Roi (K) : Valent 10 points.");
+            Console.WriteLine("   • As (A) : Vaut 11 ou 1 selon ce qui arrange votre jeu.");
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("\n [DÉROULEMENT D'UNE DONNE]");
+            Console.ResetColor();
+            Console.WriteLine("   1. Vous misez une somme.");
+            Console.WriteLine("   2. Le croupier distribue 2 cartes visibles à vous, et 2 au croupier (dont une cachée).");
+            Console.WriteLine("   3. Votre tour : Vous pouvez piocher (H) autant de fois que voulu ou Rester (S).");
+            Console.WriteLine("   4. Tour du croupier : Il révèle sa carte cachée et piochera TANT QUE son score est inférieur à 17.");
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("\n [RÉSULTATS]");
+            Console.ResetColor();
+            Console.WriteLine("   • Votre score > Croupier ou Croupier > 21 : Vous gagnez 1x votre mise.");
+            Console.WriteLine("   • Même score : Égalité, vous reprenez votre mise.");
+            Console.WriteLine("   • Votre score < Croupier : Le casino remporte votre mise.");
+
+            Console.WriteLine("\n" + new string('─', 67));
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.WriteLine(" > Appuyez sur une touche pour fermer les règles et lancer la partie...");
+            Console.ResetColor();
+            Console.ReadKey();
+        }
     }
 }
